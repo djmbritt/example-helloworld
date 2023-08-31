@@ -10,3 +10,13 @@ jobs:
       commands:
         - npm ci
         - npm run build:program-rust
+      artifacts:
+        - node_modules
+        - dist
+  
+    - name: test
+      commands:
+        - npm run test:program-rust
+      resources:
+        - name: node_modules
+        - name: dist
