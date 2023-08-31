@@ -11,8 +11,8 @@ jobs:
         - npm ci
         - npm run build:program-rust
       artifacts:
-        - node_modules
-        - dist
+        - name: node_modules
+        - name: dist
   
     - name: test
       commands:
