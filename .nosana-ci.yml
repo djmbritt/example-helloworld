@@ -6,6 +6,7 @@ global:
       - "*"
 
 jobs:
-  - name: Create README
-    commands:
-      - echo NOSANA_NODE
+    - name: build
+      commands:
+        - npm ci
+        - npm run build:program-rust
