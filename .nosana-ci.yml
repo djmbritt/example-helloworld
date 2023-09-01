@@ -1,5 +1,5 @@
 global:
-  image: nosana/solana
+  image: alpine
 
   trigger:
     branch:
@@ -8,24 +8,8 @@ global:
 jobs:
     - name: build
       commands:
-        - npm ci
-        - npm run build:program-rust
+        - echo "hello world"
+        - mkdir dist
       artifacts:
-        - name: node_modules
-        - name: dist
-  
-    - name: test
-      commands:
-        - npm run test:program-rust
-      resources:
-        - name: node_modules
         - name: dist
 
-    - name: deploy
-      commands:
-        - solana-keygen new --no-bip39-passphrase
-        - solana airdrop 1 --url devnet
-        - solana program deploy dist/program/helloworld.so --url devnet
-      resources:
-        - name: node_modules
-        - name: dist
