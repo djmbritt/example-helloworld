@@ -20,6 +20,7 @@ jobs:
       - echo "testing..."
     resources:
       - name: dist
+      - name: node_modules
 
   - name: deploy
     commands:
