@@ -5,5 +5,5 @@
 </p>
 
 # Hello world on Solana
+Check out Nosana!
 
-This hello world guide has moved to the [main Solana documentation](https://docs.solana.com/getstarted/rust).
